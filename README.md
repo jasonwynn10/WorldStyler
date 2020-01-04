@@ -1,5 +1,5 @@
 # WorldStyler
-Yet another World Editor plugin for PocketMine... except it's actually pretty fast!
+Yet another World Editor plugin for PocketMine... except it's ridiculously fast!
 
 ## Installation
 [![](https://poggit.pmmp.io/shield.state/WorldStyler)](https://poggit.pmmp.io/p/WorldStyler)<br>
