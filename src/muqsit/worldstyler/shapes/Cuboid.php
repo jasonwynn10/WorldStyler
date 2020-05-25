@@ -75,7 +75,7 @@ class Cuboid {
                 $az = $minZ + $z;
                 for ($y = 0; $y <= $yCap; ++$y) {
                     $ay = $minY + $y;
-                    $iterator->moveTo($ax, $ay, $az);
+                    $iterator->moveTo($ax, $ay, $az, true);
                     $blocks[World::blockHash($x, $y, $z)] = $iterator->currentSubChunk->getFullBlock($ax & 0x0f, $ay & 0x0f, $az & 0x0f);
                 }
             }
@@ -105,7 +105,7 @@ class Cuboid {
         for ($x = $minX; $x <= $maxX; ++$x) {
             for ($z = $minZ; $z <= $maxZ; ++$z) {
                 for ($y = $minY; $y <= $maxY; ++$y) {
-                    $iterator->moveTo($x, $y, $z);
+                    $iterator->moveTo($x, $y, $z, true);
                     $iterator->currentSubChunk->setFullBlock($x & 0x0f, $y & 0x0f, $z & 0x0f, $fullId);
                 }
             }
@@ -138,7 +138,7 @@ class Cuboid {
         for ($x = $minX; $x <= $maxX; ++$x) {
             for ($z = $minZ; $z <= $maxZ; ++$z) {
                 for ($y = $minY; $y <= $maxY; ++$y) {
-                    $iterator->moveTo($x, $y, $z);
+                    $iterator->moveTo($x, $y, $z, true);
                     if (isset($mapping[$fullBlock = $iterator->currentSubChunk->getFullBlock($x & 0x0f, $y & 0x0f, $z & 0x0f)])) {
                         $iterator->currentSubChunk->setFullBlock($x & 0x0f, $y & 0x0f, $z & 0x0f, $mapping[$fullBlock]);
                     }
